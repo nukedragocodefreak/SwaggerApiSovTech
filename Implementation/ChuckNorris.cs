@@ -11,10 +11,10 @@ namespace SwaggerAPI.Implementation
 {
     public class ChuckNorris : IChuckNorris
     {
-        public async Task<IEnumerable<Categories>> GetAll()
+        public async Task<IEnumerable<CategoriesChuck>> GetAll()
         {
-            var categories = new List<Categories>();
-            categories = new List<Categories>();
+            var categories = new List<CategoriesChuck>();
+            categories = new List<CategoriesChuck>();
             var callchuck = await SD.GetStringAsync(SD.baseUrlChuck + "categories/");
             var listcategories = JsonConvert.DeserializeObject<object>(callchuck);
             string[] propertyNames = listcategories.GetType().GetProperties().Select(p => p.Name).ToArray();
@@ -24,9 +24,9 @@ namespace SwaggerAPI.Implementation
             }
             return categories;
         }
-        public async Task<Categories> GetAllCategories()
+        public async Task<CategoriesChuck> GetAllCategories()
         {
-            var categories = new Categories();
+            var categories = new CategoriesChuck();
             categories.Category = new List<string>();
             var callchuck = await SD.GetStringAsync(SD.baseUrlChuck + "categories/");
             var listcategories = JsonConvert.DeserializeObject<object>(callchuck);

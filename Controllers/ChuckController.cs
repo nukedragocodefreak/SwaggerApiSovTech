@@ -19,7 +19,7 @@ namespace SwaggerAPI.Controllers
             _requestService = requestService;
         }
         [HttpGet]
-        public async Task<Categories> GetCategories()
+        public async Task<CategoriesChuck> GetCategories()
          {
              var _categories = await _requestService.GetAllCategories();
              return (_categories);

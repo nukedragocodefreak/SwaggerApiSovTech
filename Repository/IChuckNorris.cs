@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SwaggerAPI.Repository
 {
-    public interface IChuckNorris : IRepositoryBase<Categories>
+    public interface IChuckNorris : IRepositoryBase<CategoriesChuck>
     {
-        Task<Categories> GetAllCategories();
+        Task<CategoriesChuck> GetAllCategories();
     }
 }
